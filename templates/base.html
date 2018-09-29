@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>{% block head %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,7 +8,7 @@
     
     {% endblock title %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
-</head>
+    {% endblock head %}</head>
 <body>
     <header>
         <nav>
@@ -29,7 +29,9 @@
     </div>
 
     <footer>
-        <p> Copyright  &copy; 2018 Mashakura </p>
+        <div class = "bottom">
+        <h3><p> Copyright  &copy; 2018 HouseHunt </p></h3>
+    </div>
     </footer>
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 			  crossorigin="anonymous"></script>
