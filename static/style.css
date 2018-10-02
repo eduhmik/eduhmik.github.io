@@ -39,7 +39,7 @@ body {
 }
 
 .footer {
-    position: bottom;
+    bottom: 0;
     background-color: rgb(53, 53, 128);
 }
 
@@ -90,4 +90,8 @@ form {
   .button:hover span:after {
     opacity: 1;
     right: 0;
+  }
+
+  .top_qns{
+    color: #000;
   }

@@ -16,6 +16,7 @@
                 <li><a href="{{url_for('index')}}">Home</a></li>
                 <li style = "float:right"><a href="{{url_for('signup')}}">Sign Up</a></li>
                 <li style = "float:right"><a href="{{url_for('signin')}}">Sign In</a></li>
+                <li style = "float:right"><a href="{{url_for('questions')}}">Questions</a></li>
             </ul>
         </nav>
     </header>
@@ -29,10 +30,9 @@
     </div>
 
     <footer>
-        <div class = "bottom">
-        <h3><p> Copyright  &copy; 2018 HouseHunt </p></h3>
-    </div>
+        <h3><p> Copyright  &copy; 2018 Stack Overflow lite </p></h3>
     </footer>
+
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 			  crossorigin="anonymous"></script>
     <script src="{{url_for('static', filename='main.js')}}"></script>
