@@ -1,11 +1,13 @@
 from flask import Flask, render_template, redirect, url_for, request
-from flask_login import LoginManager, login_required, login_user
+from flask_login import LoginManager, login_required, login_user, logout_user
 
 from mockdbhelper import MockDBHelper as DBHelper
 from user import User
+from passwordhelper import PasswordHelper
 import config
 
 DB = DBHelper()
+PH = PasswordHelper()
 
 app = Flask(__name__)
 app.config.update(dict(
@@ -18,20 +20,41 @@ login_manager = LoginManager(app)
 def index():
     return render_template('index.html')
 
-@app.route('/signup')
+@app.route('/signup', methods = ["GET", "POST"])
 def signup():
-    return render_template('signup.html')
+	username = request.form.get("username")
+	email = request.form.get("email")
+	pwd1 = request.form.get("password")
+	pwd2 = request.form.get("password2")
+	if not pwd1 == pwd2 and DB.get_user(email):
+		return redirect(url_for('signup'))
+	salt = PH.get_salt()
+	hashed = PH.get_hash(str(pwd1) + str(salt))
+	DB.add_user(username, email, salt, hashed)
+	return render_template('signup.html')
 
-@app.route('/signin', methods=["POST"])
+@app.route('/signin', methods= ['GET','POST'])
 def signin():
 	email = request.form.get("email")
 	password = request.form.get("password")
+	stored_user = DB.get_user(email)
 	user_password = DB.get_user(email)
-	if user_password and user_password == password:
+	if stored_user and PH.validate_password(password, stored_user['salt'], stored_user['hashed']):
 		user = User(email)
-		login_user(user)
-		return redirect(url_for('questions'))
-	return index()
+		login_user(user, remember=True)
+		return render_template('questions.html')
+	return render_template('signin.html')
+
+@login_manager.user_loader
+def load_user(user_id):
+	user_password = DB.get_user(user_id)
+	if user_password:
+		return User(user_id)
+
+@app.route("/logout")
+def logout():
+	logout_user()
+	return redirect(url_for('index'))
 
 @app.route('/questions')
 @login_required

@@ -15,14 +15,12 @@ Sign_up
         }
     </style>
 <body>
-    <form class="myBackground">
+    <form class="myBackground" action="/signup" method="POST">
         <br>
             <br>
                 <br>
-                First name:<br>
-                <input type="text" name="firstname" placeholder="firstname"><br>
-                Last name:<br>
-                <input type="text" name="lastname" placeholder="lastname"></br>
+                Username:<br>
+                <input type="text" name="username" placeholder="username"></br>
                 Email:<br>
                 <input type="text" name="email" placeholder="email"><br>
                 Password:<br>
@@ -31,7 +29,7 @@ Sign_up
                 <input type="text" name="confirm_password" placeholder="confirm_password"></br>
             
                 <br>
-                <a href="submit" class="button">Sign Up</a></br>
+                <a href="signup" class="button">Sign Up</a></br>
                     <p> Already have an account?</p>
     
                     <a href="signin" name="sign_in">Sign in</a>
