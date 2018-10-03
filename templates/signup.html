@@ -15,6 +15,7 @@ Sign_up
         }
     </style>
 <body>
+    <div class="about">
     <form class="myBackground" action="/signup" method="POST">
         <br>
             <br>
@@ -32,10 +33,11 @@ Sign_up
                 <a href="signup" class="button">Sign Up</a></br>
                     <p> Already have an account?</p>
     
-                    <a href="signin" name="sign_in">Sign in</a>
+                    <a href={{url_for('signin')}} class="link" name="sign_in">Sign in</a>
             </br>
         </br>
     </br>
-    </form> 
+    </form>
+</div> 
 </body>
 {% endblock page_content %}

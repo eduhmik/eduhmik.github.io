@@ -32,9 +32,10 @@ def signup():
 	hashed = PH.get_hash(str(pwd1) + str(salt))
 	DB.add_user(username, email, salt, hashed)
 	return render_template('signup.html')
-
 @app.route('/signin', methods= ['GET','POST'])
 def signin():
+	if request.method == 'POST':
+		return render_template('signin.html')
 	email = request.form.get("email")
 	password = request.form.get("password")
 	stored_user = DB.get_user(email)
@@ -42,7 +43,7 @@ def signin():
 	if stored_user and PH.validate_password(password, stored_user['salt'], stored_user['hashed']):
 		user = User(email)
 		login_user(user, remember=True)
-		return render_template('questions.html')
+		"""return redirect(url_for('questions'))"""
 	return render_template('signin.html')
 
 @login_manager.user_loader

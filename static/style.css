@@ -29,10 +29,14 @@ body {
     background-image: url(./images/bg.jpg);
     background-size: cover;
 }
+.link {
+    text-decoration-style: none;
+}
 
 .myBackground {
     width: 600px;
     height: 450px;
+    padding: 5px;
     background-position: center;
     border:2px solid orange;
     background-size: cover;
@@ -46,6 +50,12 @@ body {
 .container {
     color: blue;
     margin-top: 50px;
+}
+.about {
+    padding: 10px;
+    color: blue;
+    font-family: Franklin Gothic Medium;
+    font-size: 20px;
 }
 
 form {

@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% block title %}
-    HouseHunt
+    StackOverflow-Lite
 {% endblock  %}
 
 
 {% block page_content%}
-        <h2>Welcome to Stack Overflow Lite</h2>   
-        
+   
+        <h1>Welcome to Stack Overflow Lite</h1>   
+    <div class="about">   
         <img src = {{url_for('static', filename='images/icon.png')}} alt = "stack overflow lite" height = '80' width = '80'>
         <p>Stack Overflow is a question and answer site for professional and enthusiast programmers. 
         It's built and run by you as part of the Stack Exchange network of Q&A sites. 
@@ -15,10 +16,10 @@
         <form action="/signup">
             <button class="button" style="vertical-align:middle"><span>Explore </span></button>
         </form>
+    </div>
         <div class = "top_qns">
-        <h1> Top Questions </h1>
-        <button>Ask Question</button>
-        
-</div>
+            <h1> Top Questions </h1>
+            <button>Ask Question</button>
+        </div>
 {% endblock page_content %}
 
