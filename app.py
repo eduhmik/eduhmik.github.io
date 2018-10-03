@@ -43,7 +43,7 @@ def signin():
 	if stored_user and PH.validate_password(password, stored_user['salt'], stored_user['hashed']):
 		user = User(email)
 		login_user(user, remember=True)
-		"""return redirect(url_for('questions'))"""
+		return redirect(url_for('questions'))
 	return render_template('signin.html')
 
 @login_manager.user_loader
