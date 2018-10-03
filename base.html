@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}
+
+    {% endblock title %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    {% endblock head %}</head>
+<body>
+    {% block navbar %}
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{url_for('index')}}">Home</a></li>
+                <li style = "float:right"><a href="{{url_for('signup')}}">Sign Up</a></li>
+                <li style = "float:right"><a href="{{url_for('signin')}}">Sign In</a></li>
+                <li style = "float:right"><a href="{{url_for('questions')}}">Questions</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% endblock %}
+    {% block page_content %}
+            
+    {% endblock page_content %}
+    
+    <div class="container">
+        <footer>
+            <h3><p> Copyright  &copy; 2018 Stack Overflow lite </p></h3>
+        </footer>
+    </div>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='main.js')}}"></script>
+</body>
+</html>
