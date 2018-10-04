@@ -58,9 +58,9 @@ def logout():
 	return redirect(url_for('index'))
 
 @app.route('/questions')
-@login_required
+
 def questions():
-    return 'You are logged in!'
+    return render_template('questions.html')
 
 
 if __name__ == '__main__':

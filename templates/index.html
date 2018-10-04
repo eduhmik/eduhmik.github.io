@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}
+    StackOverflow-Lite
+{% endblock  %}
+
+
+{% block page_content%}
+    <div class="about"> 
+        <h1>Welcome to Stack Overflow Lite</h1>  
+        <img src = {{url_for('static', filename='images/icon.png')}} alt = "stack overflow lite" height = '80' width = '80'>
+        <p>Stack Overflow is a question and answer site for professional and enthusiast programmers. 
+        It's built and run by you as part of the Stack Exchange network of Q&A sites. 
+        With your help, we're working together to build a library of detailed answers to every question about programming.</p>
+
+        <form action="/signup">
+            <button class="button" style="vertical-align:middle"><span>Explore </span></button>
+        </form>
+    </div>
+    <hr>
+        <div class = "top_qns">
+            <h1> Top Questions </h1>
+            <div class="card">
+                    <img src="img_avatar.png" alt="Question 1" style="width:100%">
+                    <div class="container2">
+                      <h4><b> How to show message of some special characters in laravel?</b></h4>
+                      <span><button class="button2" style="vertical-align:middle">php</button>
+                      <button class="button2" style="vertical-align:middle">laravel</button></span>
+                      <hr/>
+                      <div id="menu-outer">
+                            <div class="table">
+                              <ul id="horizontal-list">
+                                <li><a href="#"><img src="{{url_for('static', filename = 'images/accept.png')}}" /></a>
+                                    Accept</li>
+                                <li><a href="#"><img src="{{url_for('static', filename = 'images/approve.png')}}" /></a>
+                                    Up-vote</li>
+                                <li><a href="#"><img src="{{url_for('static', filename = 'images/dislike.png')}}" /></a>
+                                    Down-vote</li>
+            
+                                <li style="float:right"><a class="button2" href="#">Ask Question</a></li>
+                              </ul>
+                            </div>
+                    </div>
+                  </div>
+        </div>
+{% endblock page_content %}
+

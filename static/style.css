@@ -24,7 +24,6 @@ a:active{
 }
 body {
     background-color: mediumseagreen;
-    text-align: center;
     text-decoration-color: chartreuse;
     background-image: url(./images/bg.jpg);
     background-size: cover;
@@ -48,14 +47,16 @@ body {
 }
 
 .container {
-    color: blue;
+    color: rgb(12, 12, 12);
     margin-top: 50px;
+    text-align: center
 }
 .about {
     padding: 10px;
-    color: blue;
+    color: rgb(10, 10, 10);
     font-family: Franklin Gothic Medium;
     font-size: 20px;
+    text-align: center;
 }
 
 form {
@@ -105,3 +106,72 @@ form {
   .top_qns{
     color: #000;
   }
+  .card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    height: 200px;
+    padding: 10px;
+    background-color: rgb(241, 238, 238);
+}
+
+.card:hover{
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container2 {
+padding: 2px 16px;
+}
+
+p {
+text-indent: 20px;
+}
+p:first-line {
+text-indent: 0;
+}
+
+.button2 {
+background-color: aqua;
+width: 50px;
+height: 20px;
+border: none;
+}
+hr {
+display: block;
+height: 1px;
+border: 0;
+border-top: 1px solid rgb(34, 52, 131);
+margin: 1em 0;
+padding: 0;
+}
+ul.item {
+list-style: none;
+}
+ul.item li {
+display: inline;
+}
+img {
+width: 30px;
+height: 30px;
+}
+.caption {
+display: block;
+}
+#menu-outer {
+height: 50px;
+}
+
+.table {
+display: table;   /* Allow the centering to work */
+margin: 0 auto;
+}
+
+ul#horizontal-list {
+min-width: 696px;
+list-style: none;
+padding-top: 5px;
+}
+ul#horizontal-list li {
+    display: inline;
+}

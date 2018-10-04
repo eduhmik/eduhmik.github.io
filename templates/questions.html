@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Quetions</title>
+</head>
+<body>
+    <div class="card">
+        <img src="img_avatar.png" alt="Question 1" style="width:100%">
+        <div class="container2">
+          <h4><b> How to show message of some special characters in laravel?</b></h4>
+          <span><button class="button2" style="vertical-align:middle">php</button>
+          <button class="button2" style="vertical-align:middle">laravel</button></span>
+          <hr/>
+          <div id="menu-outer">
+                <div class="table">
+                  <ul id="horizontal-list">
+                    <li><a href="#"><img src="{{url_for('static', filename = 'images/accept.png')}}" /></a>
+                        Accept</li>
+                    <li><a href="#"><img src="{{url_for('static', filename = 'images/approve.png')}}" /></a>
+                        Up-vote</li>
+                    <li><a href="#"><img src="{{url_for('static', filename = 'images/dislike.png')}}" /></a>
+                        Down-vote</li>
+
+                    <li style="float:right"><a class="button2" href="#">Ask Question</a></li>
+                  </ul>
+                </div>
+        </div>
+      </div>
+</body>
+</html>
